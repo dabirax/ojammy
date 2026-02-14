@@ -53,6 +53,11 @@
 --info-foreground: oklch(1 0 0);
 }
 
+@theme {
+  --color-border: oklch(var(--border));
+  --color-background: oklch(var(--background));
+  --color-foreground: oklch(var(--foreground));
+}
 
 
 @layer base {
