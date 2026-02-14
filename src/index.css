@@ -1,0 +1,76 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+
+@custom-variant dark (&:is(.dark *));
+
+:root { 
+
+  --background: oklch(0.97 0.01 240);
+--foreground: oklch(0.22 0.04 257);
+
+--card: oklch(1 0 0);
+--card-foreground: oklch(0.22 0.04 257);
+
+--popover: oklch(1 0 0);
+--popover-foreground: oklch(0.22 0.04 257);
+
+--primary: oklch(0.62 0.22 258);
+--primary-foreground: oklch(1 0 0);
+
+--secondary: oklch(0.62 0.19 160);
+--secondary-foreground: oklch(1 0 0);
+
+--muted: oklch(0.96 0.01 240);
+--muted-foreground: oklch(0.55 0.03 250);
+
+--accent: oklch(0.96 0.01 240);
+--accent-foreground: oklch(0.22 0.04 257);
+
+--destructive: oklch(0.63 0.25 25);
+--destructive-foreground: oklch(1 0 0);
+
+--border: oklch(0.92 0.02 250);
+--input: oklch(0.92 0.02 250);
+--ring: oklch(0.62 0.22 258);
+
+--sidebar-background: oklch(1 0 0);
+--sidebar-foreground: oklch(0.55 0.03 250);
+--sidebar-primary: oklch(0.62 0.22 258);
+--sidebar-primary-foreground: oklch(1 0 0);
+--sidebar-accent: oklch(0.97 0.03 258);
+--sidebar-accent-foreground: oklch(0.62 0.22 258);
+--sidebar-border: oklch(0.92 0.02 250);
+--sidebar-ring: oklch(0.62 0.22 258);
+
+--success: oklch(0.62 0.19 160);
+--success-foreground: oklch(1 0 0);
+--warning: oklch(0.75 0.17 85);
+--warning-foreground: oklch(1 0 0);
+--info: oklch(0.62 0.22 258);
+--info-foreground: oklch(1 0 0);
+}
+
+
+
+@layer base {
+    * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer utilities {
+  .card-shadow {
+    box-shadow: 0 1px 3px 0 hsl(0 0% 0% / 0.04), 0 1px 2px -1px hsl(0 0% 0% / 0.04);
+  }
+  .card-shadow-hover {
+    box-shadow: 0 4px 6px -1px hsl(0 0% 0% / 0.06), 0 2px 4px -2px hsl(0 0% 0% / 0.06);
+  }
+}
