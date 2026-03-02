@@ -2,6 +2,8 @@ import { useState } from "react";
 import { ShoppingCart, Trash2, CreditCard } from "lucide-react";
 import { useStore } from "@/context/UseStore";
 import { toast } from "sonner";
+import {formatCurrency} from "@/lib/formatCurrency"
+
 
 export default function Sales() {
   const {
@@ -141,10 +143,10 @@ export default function Sales() {
                           {item.quantity}
                         </td>
                         <td className="px-5 py-3 text-right text-muted-foreground">
-                          ${item.unitPrice.toFixed(2)}
+                          ₦{formatCurrency(item.unitPrice)}
                         </td>
                         <td className="px-5 py-3 text-right font-medium text-foreground">
-                          ${item.subtotal.toFixed(2)}
+                          ₦{formatCurrency(item.subtotal)}
                         </td>
                         <td className="px-5 py-3 text-right">
                           <button
@@ -165,7 +167,7 @@ export default function Sales() {
                     Estimated Profit
                   </span>
                   <span className="font-medium text-success">
-                    ${cartProfit.toFixed(2)}
+                    ₦{formatCurrency(cartProfit)}
                   </span>
                 </div>
                 <div className="flex justify-between">
@@ -173,7 +175,7 @@ export default function Sales() {
                     Total
                   </span>
                   <span className="text-lg font-bold text-foreground">
-                    ${cartTotal.toFixed(2)}
+                    ₦{formatCurrency(cartTotal)}
                   </span>
                 </div>
                 <button

@@ -6,6 +6,8 @@ import ProductModal from "@/components/ProductModal";
 import ConfirmModal from "@/components/ConfirmModal";
 import type { Product } from "@/data/types";
 import { toast } from "sonner";
+import { formatCurrency } from "@/lib/formatCurrency";
+
 
 export default function Products() {
   const { products, addProduct, updateProduct, deleteProduct } = useStore();
@@ -103,10 +105,10 @@ export default function Products() {
                       {p.name}
                     </td>
                     <td className="px-5 py-3 text-right text-muted-foreground">
-                      ${p.costPrice.toFixed(2)}
+                      ₦{formatCurrency(p.costPrice)}
                     </td>
                     <td className="px-5 py-3 text-right text-foreground">
-                      ${p.sellingPrice.toFixed(2)}
+                      ₦{formatCurrency(p.sellingPrice)}
                     </td>
                     <td className="px-5 py-3 text-right text-foreground">
                       {p.quantity}

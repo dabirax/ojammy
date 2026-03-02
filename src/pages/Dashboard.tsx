@@ -1,10 +1,10 @@
 import { useState } from "react";
 import {
-  DollarSign,
   TrendingUp,
   Package,
   Pencil,
   Trash2,
+  Banknote,
 } from "lucide-react";
 import { useStore } from "@/context/UseStore";
 import StatCard from "@/components/StatCard";
@@ -12,6 +12,7 @@ import SaleEditModal from "@/components/SalesEditModal";
 import ConfirmModal from "@/components/ConfirmModal";
 import type { Sale } from "@/data/types";
 import { toast } from "sonner";
+import { formatCurrency } from "@/lib/formatCurrency";
 
 export default function Dashboard() {
   const { sales, products, updateSale, deleteSale } = useStore();
@@ -53,13 +54,13 @@ export default function Dashboard() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <StatCard
           title="Total Sales Today"
-          value={`$${totalSalesToday.toFixed(2)}`}
-          icon={DollarSign}
+          value={`₦${formatCurrency(totalSalesToday)}`}
+          icon={Banknote}
           variant="primary"
         />
         <StatCard
           title="Total Profit Today"
-          value={`$${totalProfitToday.toFixed(2)}`}
+          value={`₦${formatCurrency(totalProfitToday)}`}
           icon={TrendingUp}
           variant="success"
         />
@@ -115,10 +116,10 @@ export default function Dashboard() {
                         .join(", ")}
                     </td>
                     <td className="px-5 py-3 text-right font-medium text-foreground">
-                      ${sale.totalAmount.toFixed(2)}
+                      ₦{formatCurrency(sale.totalAmount)}
                     </td>
                     <td className="px-5 py-3 text-right font-medium text-success">
-                      ${sale.totalProfit.toFixed(2)}
+                      ₦{formatCurrency(sale.totalProfit)}
                     </td>
                     <td className="px-5 py-3 text-right">
                       <div className="inline-flex gap-1">
