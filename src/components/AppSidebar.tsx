@@ -48,7 +48,7 @@ export default function AppSidebar({ open, onClose }: AppSidebarProps) {
               </span>
             </div>
             <span className="text-lg font-bold text-foreground tracking-tight">
-              OJAMMY
+              OJAMY
             </span>
           </div>
           <button
